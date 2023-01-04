@@ -6,7 +6,7 @@ import {
   AiOutlineMenu,
   AiOutlineSearch,
 } from "react-icons/ai";
-import { BsFillCartFill, BsFillSaveFill } from "react-icons/bs";
+import { BsFillSaveFill } from "react-icons/bs";
 import { TbTruckDelivery } from "react-icons/tb";
 import { FaUserFriends, FaWallet } from "react-icons/fa";
 import { MdFavorite, MdHelp } from "react-icons/md";
@@ -41,11 +41,13 @@ const Navbar = () => {
         </div>
       </motion.div>
       {/* Right Side Search */}
-      <motion.div ref={element}
+      <motion.div
+        ref={element}
         variants={navAnimation}
         transition={{ delay: 0.1 }}
         animate={controls}
-         className="bg-[var(--appColor)] rounded-full flex items-center px-2 w-[200px] sm:w-[400px] lg:w-[500px]">
+        className="bg-[var(--appColor)] rounded-full flex items-center px-2 w-[200px] sm:w-[400px] lg:w-[500px]"
+      >
         <AiOutlineSearch size={25} className="text-[#fa8517]" />
         <input
           type="text"
@@ -54,8 +56,9 @@ const Navbar = () => {
         />
       </motion.div>
       {/* Cart Button */}
-      <button className="bg-[var(--appColor)] text-white hidden md:flex items-center py-2 rounded-full font-bold outline-none border-none">
-        <BsFillCartFill size={20} className="mr-2 text-[#fa8517]" /> Cart
+      <button className="bg-[var(--appColor)] text-white  md:flex items-center py-2 rounded-full font-bold outline-none border-none">
+        {/* <BsFillCartFill size={ 20 } className="mr-2 text-[#fa8517]" /> */}
+        Cart
       </button>
 
       {/* Mobile Menu */}

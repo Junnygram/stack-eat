@@ -24,7 +24,7 @@ function Product(props, index) {
         <div>
           <div className="flex gap-1">
             <span className="bg-orange-500 text-white p-1 rounded-full ">
-              {product.price}
+              ${product.price}
             </span>
             <div className="bg-orange-500 text-white p-2 rounded-full text-xs text-center pt-2">
               <BsFillCartFill />

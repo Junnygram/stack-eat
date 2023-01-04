@@ -1,6 +1,9 @@
 import React, { useEffect, useReducer } from "react";
 import axios from "axios";
 import Product from "./Product";
+import { Helmet } from "react-helmet-async";
+import LoadingBox from "./LoadingBox";
+import { getError } from "../utils";
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -31,7 +34,8 @@ function Food() {
         const result = await axios.get("/api/products");
         dispatch({ type: "FETCH_SUCCESS", payload: result.data });
       } catch (err) {
-        dispatch({ type: "FETCH_FAIL", payload: err.message });
+        dispatch({ type: "FETCH_FAIL", payload: getError(err) });
+        // dispatch({ type: "FETCH_FAIL", payload: err.message });
       }
     };
     fetchData();
@@ -59,6 +63,9 @@ function Food() {
 
   return (
     <div className="max-w-[1640px] m-auto px-4 py-12">
+      <Helmet>
+        <title>stackeat</title>
+      </Helmet>
       <h1 className="text-orange-600 font-bold text-4xl text-center mb-10">
         Top Rated Menu Items
       </h1>
@@ -137,7 +144,7 @@ function Food() {
       {/* Display foods */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 pt-4">
         {loading ? (
-          <div>Loading...</div>
+          <LoadingBox />
         ) : error ? (
           <div>{error}</div>
         ) : (

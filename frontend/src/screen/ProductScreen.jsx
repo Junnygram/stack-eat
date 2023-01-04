@@ -2,6 +2,11 @@ import React, { useEffect, useReducer } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import Rating from "../components/Rating";
+import Available from "../components/stock/Available";
+import Unavailable from "../components/stock/Unavailable";
+import { Helmet } from "react-helmet-async";
+import LoadingBox from "../components/LoadingBox";
+import ErrorBox from "../components/ErrorBox";
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -38,21 +43,27 @@ function ProductScreen() {
   }, [slug]);
 
   return loading ? (
-    <div>Loading...</div>
+    <LoadingBox />
   ) : error ? (
-    <div>{error}</div>
+    <ErrorBox>{error}</ErrorBox>
   ) : (
     <div className="grid md:grid-cols-2 px-4 mt-10 sm:grid-cols-1 gap-10">
       <div>
+        <Helmet>
+          <title>{product.name}</title>
+        </Helmet>
         <img
           className="max-w-full and h-auto"
           src={product.image}
           alt={product.name}
         />
       </div>
-      <div className="grid grid-cols-2">
-        <div className="px-3 ">
-          <div className="text-2xl font-bold border-b-2 border-orange-500">
+      <div className="grid grid-cols-2 ">
+        <div className="px-3 mt-3">
+          <Helmet>
+            <title>{product.name}</title>
+          </Helmet>
+          <div className="text-2xl font-bold border-b-2 border-orange-500 ">
             {" "}
             {product.name}
           </div>
@@ -67,8 +78,14 @@ function ProductScreen() {
           </div>
         </div>
         <div className="px-10 mt-4 ">
-          <div>Price: ${product.price}</div>
-          <div>status: {product.countInStock}</div>
+          <div className="flex ">Price: ${product.price}</div>
+          <div className="flex gap-2">
+            <div>status:</div>
+            <div>
+              {" "}
+              {product.countInStock > 0 ? <Available /> : <Unavailable />}
+            </div>
+          </div>
           <button className="bg-orange-500 border-none text-white text-l py-2 px-4 mt-5 ">
             Add to cart
           </button>
