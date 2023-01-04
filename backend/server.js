@@ -8,6 +8,14 @@ app.get("/api/products", (req, res) => {
 app.get("/api/category", (req, res) => {
   res.send(data.categories);
 });
+app.get("/api/products/slug/:slug", (req, res) => {
+  const product = data.products.find((x) => x.slug === req.params.slug);
+  if (product) {
+    res.send(product);
+  } else {
+    res.status(404).send({ message: "Product Not Found" });
+  }
+});
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => {
