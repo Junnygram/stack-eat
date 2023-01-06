@@ -6,15 +6,20 @@ import {
   AiOutlineMenu,
   AiOutlineSearch,
 } from "react-icons/ai";
-import { BsFillSaveFill } from "react-icons/bs";
+import { BsFillCartFill, BsFillSaveFill } from "react-icons/bs";
 import { TbTruckDelivery } from "react-icons/tb";
 import { FaUserFriends, FaWallet } from "react-icons/fa";
 import { MdFavorite, MdHelp } from "react-icons/md";
 import { useScroll } from "./useScroll";
 import { navAnimation } from "../animation";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { Store } from "../Store";
 
 const Navbar = () => {
+  const { state } = useContext(Store);
+  const { cart } = state;
   const [element, controls] = useScroll();
   const [nav, setNav] = useState(false);
   return (
@@ -56,10 +61,17 @@ const Navbar = () => {
         />
       </motion.div>
       {/* Cart Button */}
-      <button className="bg-[var(--appColor)] text-white  md:flex items-center py-2 rounded-full font-bold outline-none border-none">
-        {/* <BsFillCartFill size={ 20 } className="mr-2 text-[#fa8517]" /> */}
-        Cart
-      </button>
+      <Link to="/cart">
+        <div className="bg-[var(--appColor)] text-white  md:flex items-center py-2 px-2 rounded-full font-bold outline-none border-none flex">
+          <BsFillCartFill size={20} className="mr-2 text-[#fa8517]" />
+
+          {cart.cartItems.length > 0 && (
+            <div className="text-orange-500 ">
+              {cart.cartItems.reduce((a, c) => a + c.quantity, 0)}
+            </div>
+          )}
+        </div>
+      </Link>
 
       {/* Mobile Menu */}
       {/* Overlay */}
@@ -83,7 +95,8 @@ const Navbar = () => {
           className="absolute right-4 top-4 cursor-pointer text-[var(--appColor)]"
         />
         <h4 className="text-2xl p-4 text-[#fa8517]">
-          STACK<span className="font-bold text-[var(--appColor)]"> EATS</span>
+          STACK
+          <span className="font-bold text-[var(--appColor)]"> EATS</span>
         </h4>
         <nav>
           <ul className="flex flex-col p-4 text-[var(--appColor)] font-bold cursor-pointer">

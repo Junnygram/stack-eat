@@ -38,23 +38,35 @@ const Hero = () => {
                 {" "}
                 <span className="font-bold text-[var(--appColor)]">PIZZA</span>
                 <span className="font-bold text-orange-500">WAFFLE</span>
-                <span className="font-bold text-[var(--appColor)]">ICE-CREAM </span>
-                <span className="font-bold text-orange-500">MUSHROOM BURGER </span>{" "}
+                <span className="font-bold text-[var(--appColor)]">
+                  ICE-CREAM{" "}
+                </span>
+                <span className="font-bold text-orange-500">
+                  MUSHROOM BURGER{" "}
+                </span>{" "}
               </h4>
 
               <h4>
                 {" "}
-                <span className="font-bold text-[var(--appColor)]"> BACON </span>{" "}
+                <span className="font-bold text-[var(--appColor)]">
+                  {" "}
+                  BACON{" "}
+                </span>{" "}
                 <span className="font-bold text-orange-500">CHEESE BURGER</span>
-                <span className="font-bold text-[var(--appColor)]"> ICE-CREAM </span>
+                <span className="font-bold text-[var(--appColor)]">
+                  {" "}
+                  ICE-CREAM{" "}
+                </span>
                 <span className="font-bold text-orange-500"> FETA </span>
-                
               </h4>
               <h4>
                 {" "}
                 <span className="font-bold text-[var(--appColor)]">BURGER</span>
                 <span className="font-bold text-orange-500">CHEESE</span>
-                <span className="font-bold text-[var(--appColor)]"> PIZZA </span>
+                <span className="font-bold text-[var(--appColor)]">
+                  {" "}
+                  PIZZA{" "}
+                </span>
                 <span className="font-bold text-orange-500"> WAFFLE </span>{" "}
               </h4>
             </div>

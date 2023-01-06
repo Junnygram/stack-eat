@@ -1,7 +1,7 @@
 const data = {
   products: [
     {
-      id: 1,
+      _id: "1",
       name: "Cheese burger",
       category: "burger",
       slug: "cheese-burger",
@@ -13,7 +13,7 @@ const data = {
       price: "10",
     },
     {
-      id: 2,
+      _id: "2",
       name: "Bacon",
       category: "burger",
       slug: "bacon-burger",
@@ -25,7 +25,7 @@ const data = {
       price: "100",
     },
     {
-      id: 3,
+      _id: "3",
       name: "Mushroom Burger",
       category: "mushroom-burger",
       slug: "burger",
@@ -37,7 +37,7 @@ const data = {
       price: "20",
     },
     {
-      id: 4,
+      _id: "4",
       name: "Loaded Burger",
       category: "loaded-burger",
       slug: "burger",
@@ -49,7 +49,7 @@ const data = {
       price: "50",
     },
     {
-      id: 5,
+      _id: "5",
       name: "Feta & Spinnach",
       category: "pizza",
       slug: "feta-spinach",
@@ -61,7 +61,7 @@ const data = {
       price: "20",
     },
     {
-      id: 6,
+      _id: "6",
       name: "Supreme Pizza",
       category: "pizza",
       slug: "supreme-burger",
@@ -73,7 +73,7 @@ const data = {
       price: "50",
     },
     {
-      id: 7,
+      _id: "7",
       name: "Meat Lovers",
       category: "pizza",
       slug: "meat-lovers",
@@ -85,7 +85,7 @@ const data = {
       price: "100",
     },
     {
-      id: 8,
+      _id: "8",
       name: "Cheese Pizza",
       category: "pizza",
       slug: "cheese-pizza",
@@ -97,7 +97,7 @@ const data = {
       price: "10",
     },
     {
-      id: 9,
+      _id: "9",
       name: "Kale Salad",
       category: "salad",
       slug: "kale-salad",
@@ -109,7 +109,7 @@ const data = {
       price: "20",
     },
     {
-      id: 10,
+      _id: "10",
       name: "Ceasar Salad",
       category: "salad",
       slug: "ceasar-salad",
@@ -121,7 +121,7 @@ const data = {
       price: "50",
     },
     {
-      id: 11,
+      _id: "11",
       name: "Loaded Salad",
       category: "salad",
       slug: "loaded-salad",
@@ -133,7 +133,7 @@ const data = {
       price: "100",
     },
     {
-      id: 12,
+      _id: "12",
       name: "Fruit Salad",
       category: "salad",
       slug: "fruit-salad",
@@ -145,7 +145,7 @@ const data = {
       price: "10",
     },
     {
-      id: 13,
+      _id: "13",
       name: "Wings",
       category: "chicken",
       slug: "chicken-wings",
@@ -157,7 +157,7 @@ const data = {
       price: "20",
     },
     {
-      id: 14,
+      _id: "14",
       name: "Baked Chicken",
       category: "chicken",
       slug: "baked-chicken",
@@ -169,7 +169,7 @@ const data = {
       price: "100",
     },
     {
-      id: 15,
+      _id: "15",
       name: "Chicken Tenders",
       category: "chicken",
       slug: "chicken-tenders",
@@ -181,7 +181,7 @@ const data = {
       price: "10",
     },
     {
-      id: 16,
+      _id: "16",
       name: "Chicken Kabob",
       category: "chicken",
       slug: "chicken-kabob",

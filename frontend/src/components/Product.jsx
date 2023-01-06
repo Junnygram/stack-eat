@@ -1,10 +1,27 @@
-import React from "react";
+import React, { useContext } from "react";
 import { BsFillCartFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
-// import Rating from "./Rating";
+import { Store } from "../Store";
+import axios from "axios";
 
 function Product(props, index) {
   const { product } = props;
+  const { state, dispatch: ctxDispatch } = useContext(Store);
+
+  const { cart } = state;
+  const addToCartHandler = async () => {
+    const existItem = cart.cartItems.find((x) => x._id === product._id);
+    const quantity = existItem ? existItem.quantity + 1 : 1;
+    const { data } = await axios.get(`/api/products/${product._id}`);
+    if (data.countInStock < quantity) {
+      window.alert("Sorry. Product is out of stock");
+      return;
+    }
+    ctxDispatch({
+      type: "CART_ADD_ITEM",
+      payload: { ...product, quantity },
+    });
+  };
   return (
     <div
       key={index}
@@ -26,8 +43,8 @@ function Product(props, index) {
             <span className="bg-orange-500 text-white p-1 rounded-full ">
               ${product.price}
             </span>
-            <div className="bg-orange-500 text-white p-2 rounded-full text-xs text-center pt-2">
-              <BsFillCartFill />
+            <div className="bg-orange-500 text-white p-2 rounded-full text-xs text-center pt-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 hover:bg-orange-900">
+              <BsFillCartFill onClick={addToCartHandler} />
             </div>
             {/* <Rating rating={product.rating} numReviews={product.numReviews} /> */}
           </div>

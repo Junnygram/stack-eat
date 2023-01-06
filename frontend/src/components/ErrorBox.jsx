@@ -4,11 +4,11 @@ function ErrorBox(props) {
   return (
     <div>
       <div
-        class="flex items-center bg-orange-500 text-white text-sm justify-center font-bold px-4 py-3"
+        className="flex items-center bg-orange-500 text-white text-sm justify-center font-bold px-4 py-3 "
         role="alert"
       >
         <svg
-          class="fill-current w-4 h-4 mr-2"
+          className="fill-current w-4 h-4 mr-2"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 20 20"
         >

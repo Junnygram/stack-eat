@@ -149,7 +149,7 @@ function Food() {
           <div>{error}</div>
         ) : (
           products.map((product, index) => (
-            <Product product={product}></Product>
+            <Product key={index} product={product}></Product>
           ))
         )}
       </div>
