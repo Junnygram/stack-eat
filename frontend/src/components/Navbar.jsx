@@ -36,7 +36,9 @@ const Navbar = () => {
           <AiOutlineMenu size={30} className="text-[var(--appColor)]" />
         </div>
         <h4 className="text-2xl sm:text-3xl lg:text-4xl px-2 text-[#fa8517]">
-          STACK <span className="font-bold text-[var(--appColor)]">EATS</span>
+          <Link to="/">
+            STACK <span className="font-bold text-[var(--appColor)]">EATS</span>
+          </Link>
         </h4>
         <div className="hidden lg:flex items-center bg-[var(--appColor)] rounded-full p-1 text-[14px]">
           <p className="bg-[var(--orange)] text-[#000000f8] rounded-full p-2 font-bold">
